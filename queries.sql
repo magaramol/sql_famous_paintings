@@ -11,6 +11,3 @@ WHERE museum_id NOT IN (
     SELECT DISTINCT museum_id 
     FROM work
 );
-
-
-
