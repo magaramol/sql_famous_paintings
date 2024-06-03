@@ -1,9 +1,13 @@
+###  first one ignore this script
+
+
+
 import pandas as pd
 from sqlalchemy import create_engine
 from urllib.parse import quote_plus
 
 # URL-encode the password
-password = quote_plus("Root@1234")
+password = quote_plus("password")
 
 conn_string = f"mysql+pymysql://root:{password}@localhost/painting"
 

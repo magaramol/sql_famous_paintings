@@ -1,10 +1,12 @@
+### ignore this file 
+
 import os
 import pandas as pd
 from sqlalchemy import create_engine
 
 # MySQL connection details
 user = 'root'
-password = 'Root@1234'
+password = 'password'
 host = 'localhost'
 database = 'painting'
 
