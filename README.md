@@ -47,6 +47,18 @@ WHERE museum_id NOT IN (
 
 ### 3. How many paintings have an asking price of more than their regular price?
 
+```sql
+
+SELECT count(*) from (SELECT 
+
+*,sale_price-regular_price as diff
+
+ from product_size) t
+
+ WHERE t.diff>0
+```
+
+
 ### 4. Identify the paintings whose asking price is less than 50% of their regular price
 
 ### 5. Which canvas size costs the most?
