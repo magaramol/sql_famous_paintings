@@ -11,3 +11,14 @@ WHERE museum_id NOT IN (
     SELECT DISTINCT museum_id 
     FROM work
 );
+
+-- 3. How many paintings have an asking price of more than their regular price?
+
+SELECT count(*) from (SELECT 
+
+*,sale_price-regular_price as diff
+
+ from product_size) t
+
+ WHERE t.diff>0;
+ 
