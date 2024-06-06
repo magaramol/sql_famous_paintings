@@ -11,7 +11,12 @@ conn_string = f"mysql+pymysql://root:{password}@localhost/painting"
 db = create_engine(conn_string)
 conn = db.connect()
 
-files = ['artist', 'canvas_size', 'image_link', 'museum_hours', 'work','museum', 'product_size', 'subject']
+#files = ['artist', 'canvas_size', 'image_link', 'museum_hours', 'work','museum', 'product_size', 'subject']
+
+
+files = ['ipl']
+
+
 
 def detect_encoding(file_path):
     with open(file_path, 'rb') as f:
