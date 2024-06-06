@@ -21,4 +21,23 @@ SELECT count(*) from (SELECT
  from product_size) t
 
  WHERE t.diff>0;
- 
+
+ -- 4. Identify the paintings whose asking price is less than 50% of their regular price
+SELECT * from 
+
+
+(SELECT  *,regular_price-sale_price as diff,
+((regular_price-sale_price)/regular_price)*100 as cn
+ from product_size
+) t
+WHERE t.cn>50;
+
+
+-- 5. Which canvas size costs the most?
+SELECT * from (SELECT a.size_id,a.sale_price,b.width,b.height,b.label,
+rank() over (ORDER BY sale_price desc) as rnk
+ from product_size a LEFT JOIN
+
+canvas_size b on a.size_id=b.size_id
+) t
+WHERE t.rnk=1;
