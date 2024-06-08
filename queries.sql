@@ -23,14 +23,11 @@ SELECT count(*) from (SELECT
  WHERE t.diff>0;
 
  -- 4. Identify the paintings whose asking price is less than 50% of their regular price
-SELECT * from 
 
-
-(SELECT  *,regular_price-sale_price as diff,
-((regular_price-sale_price)/regular_price)*100 as cn
+SELECT  *
  from product_size
-) t
-WHERE t.cn>50;
+WHERE  sale_price < (regular_price*0.5)
+;
 
 
 -- 5. Which canvas size costs the most?

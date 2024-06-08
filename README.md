@@ -63,13 +63,9 @@ SELECT count(*) from (SELECT
 
 
 ```sql
-SELECT * from 
-(SELECT  *,regular_price-sale_price as diff,
-((regular_price-sale_price)/regular_price)*100 as cn
+SELECT  *
  from product_size
-) t
-WHERE t.cn>50
-
+WHERE  sale_price < (regular_price*0.5)
 ```
 
 ### 5. Which canvas size costs the most?
